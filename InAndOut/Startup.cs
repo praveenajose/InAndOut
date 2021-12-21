@@ -46,6 +46,7 @@ namespace InAndOut
 
             app.UseAuthorization();
 
+            //Initial
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

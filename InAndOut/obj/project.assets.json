@@ -6337,11 +6337,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Praveena\\MVC5\\InAndOut\\InAndOut\\InAndOut.csproj",
+      "projectUniqueName": "E:\\Praveena\\Appointment\\InAndOut\\InAndOut.csproj",
       "projectName": "InAndOut",
-      "projectPath": "E:\\Praveena\\MVC5\\InAndOut\\InAndOut\\InAndOut.csproj",
+      "projectPath": "E:\\Praveena\\Appointment\\InAndOut\\InAndOut.csproj",
       "packagesPath": "C:\\Users\\bersh\\.nuget\\packages\\",
-      "outputPath": "E:\\Praveena\\MVC5\\InAndOut\\InAndOut\\obj\\",
+      "outputPath": "E:\\Praveena\\Appointment\\InAndOut\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\bersh\\AppData\\Roaming\\NuGet\\NuGet.Config",
