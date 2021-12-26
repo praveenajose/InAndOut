@@ -37,20 +37,19 @@ namespace InAndOut.Migrations
                     b.ToTable("Expenses");
                 });
 
-            modelBuilder.Entity("InAndOut.Models.ExpenseCategory", b =>
+            modelBuilder.Entity("InAndOut.Models.ExpenseType", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ExpenseCategoryName")
-                        .IsRequired()
+                    b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("ExpenseCategories");
+                    b.ToTable("ExpenseTypes");
                 });
 
             modelBuilder.Entity("InAndOut.Models.Item", b =>

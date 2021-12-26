@@ -7,13 +7,12 @@ using System.Threading.Tasks;
 
 namespace InAndOut.Models
 {
-    public class ExpenseCategory
+    public class ExpenseType
     {
         [Key]
         public int Id { get; set; }
 
-        [DisplayName("Expense Category")]
-        [Required]
-        public string ExpenseCategoryName { get; set; }
+        [DisplayName("Expense Type")]
+        public string Name { get; set; }
     }
 }

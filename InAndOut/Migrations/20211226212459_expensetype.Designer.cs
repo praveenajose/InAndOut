@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InAndOut.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211226124908_expensecategoryTableCreated")]
-    partial class expensecategoryTableCreated
+    [Migration("20211226212459_expensetype")]
+    partial class expensetype
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -39,20 +39,19 @@ namespace InAndOut.Migrations
                     b.ToTable("Expenses");
                 });
 
-            modelBuilder.Entity("InAndOut.Models.ExpenseCategory", b =>
+            modelBuilder.Entity("InAndOut.Models.ExpenseType", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ExpenseCategoryName")
-                        .IsRequired()
+                    b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("ExpenseCategories");
+                    b.ToTable("ExpenseTypes");
                 });
 
             modelBuilder.Entity("InAndOut.Models.Item", b =>
