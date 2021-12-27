@@ -22,6 +22,10 @@ namespace InAndOut.Controllers
         public IActionResult Index()
         {
             IEnumerable<Expense> objList = _db.Expenses;
+            foreach (var obj in objList)
+            {
+                obj.ExpenseType = _db.ExpenseTypes.FirstOrDefault(i => i.Id == obj.ExpenseTypeId);
+            }
             return View(objList);
         }
 
@@ -105,23 +109,33 @@ namespace InAndOut.Controllers
                 return NotFound();
             }
 
-            var obj = _db.Expenses.Find(Id);
-            if (obj == null)
+            var expobj = _db.Expenses.Find(Id);
+            if (expobj == null)
             {
                 return NotFound();
             }
 
-            return View(obj);
+            ExpenseVM expVM = new ExpenseVM()
+            {
+                Expense = expobj,
+                TypeDropDown = _db.ExpenseTypes.Select(i => new SelectListItem
+                {
+                    Text = i.Name,
+                    Value = i.Id.ToString()
+                })
+            };
+
+            return View(expVM);
         }
 
         //Post - Update
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Update(Expense obj)
+        public IActionResult Update(ExpenseVM obj)
         {
             if (ModelState.IsValid)
             {
-                _db.Expenses.Update(obj);
+                _db.Expenses.Update(obj.Expense);
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
