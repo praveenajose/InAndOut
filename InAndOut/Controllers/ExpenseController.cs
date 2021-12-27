@@ -36,6 +36,7 @@ namespace InAndOut.Controllers
         {
             if(ModelState.IsValid)
             {
+                obj.ExpenseTypeId = 4;
                 _db.Expenses.Add(obj);
                 _db.SaveChanges();
                 return RedirectToAction("Index");

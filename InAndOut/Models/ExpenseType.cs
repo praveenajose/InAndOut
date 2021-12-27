@@ -13,6 +13,7 @@ namespace InAndOut.Models
         public int Id { get; set; }
 
         [DisplayName("Expense Type")]
+        [Required]
         public string Name { get; set; }
     }
 }
